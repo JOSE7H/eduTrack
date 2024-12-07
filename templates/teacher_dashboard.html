@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Uploaded Assignments</h2>
+<table>
+    <thead>
+        <tr><th>Title</th><th>Description</th><th>Due Date</th></tr>
+    </thead>
+    <tbody>
+        {% for assignment in uploaded_assignments %}
+        <tr>
+            <td>{{ assignment.title }}</td>
+            <td>{{ assignment.description }}</td>
+            <td>{{ assignment.due_date }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">No assignments uploaded yet.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
